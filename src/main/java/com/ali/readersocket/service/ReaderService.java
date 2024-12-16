@@ -1,18 +1,20 @@
 package com.ali.readersocket.service;
 
-import com.ali.readersocket.entity.Message;
+import com.ali.readersocket.rabbitmq.Factory;
 import com.ali.readersocket.rabbitmq.MessageQueueService;
+import com.rabbitmq.client.Channel;
 import jakarta.annotation.PostConstruct;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.concurrent.TimeoutException;
 
 @Component
 public class ReaderService {
