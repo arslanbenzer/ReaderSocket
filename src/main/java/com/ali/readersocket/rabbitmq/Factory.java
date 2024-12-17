@@ -14,7 +14,6 @@ public class Factory {
         factory.setHost("localhost");
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
-        channel.queueDeclare("message_queue", false, false, false, null);
         return channel;
     }
 }
